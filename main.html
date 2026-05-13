@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee System</title>
+</head>
+<body>
+
+    <h1>Employee Management</h1>
+
+    <form method="POST">
+
+        <input type="text"
+        name="name"
+        placeholder="Employee name">
+
+        <br><br>
+
+        <input type="text"
+        name="position"
+        placeholder="Position">
+
+        <br><br>
+
+        <input type="number"
+        name="salary"
+        placeholder="Salary">
+
+        <br><br>
+
+        <button type="submit">
+            Save
+        </button>
+
+    </form>
+
+    <hr>
+
+    {% for employee in employees %}
+
+        <h2>{{ employee.name }}</h2>
+
+        <p>{{ employee.position }}</p>
+
+        <p>${{ employee.salary }}</p>
+
+        <a href="/delete/{{ loop.index0 }}">
+            Delete
+        </a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
